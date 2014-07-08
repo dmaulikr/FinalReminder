@@ -21,22 +21,21 @@
     // Do any additional setup after loading the view.
     // Add a border to the description text box
     [_reminderDescription.layer setBorderColor:[[[UIColor grayColor] colorWithAlphaComponent:0.5] CGColor]];
-    [_reminderDescription.layer setBorderWidth:1.0];
+    [_reminderDescription.layer setBorderWidth:0.5];
     
     // Give the border rounded edges
-    _reminderDescription.layer.cornerRadius = 0.5;
+    _reminderDescription.layer.cornerRadius = 5.0;
     _reminderDescription.clipsToBounds = YES;
     
     UIDatePicker *datePicker = [[UIDatePicker alloc] init];
     
     _reminderDate.inputView = datePicker;
     
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [datePicker addTarget:self action:@selector(updateDateField:) forControlEvents:UIControlEventValueChanged];
     
-    NSString *strDate = [formatter stringFromDate:datePicker.date];
     
-    _reminderDate.text = strDate;
-
+    
+    // NSString *strDate = [formatter stringFromDate:datePicker.date]
     
 
 
@@ -54,13 +53,24 @@
     ACUReminder *newReminder = [[ACUReminder alloc] init];
     newReminder.reminderName = self.reminderName.text;
     newReminder.reminderDescription = self.reminderDescription.text;
-    newReminder.reminderDate = (NSDate *)self.reminderDate.text;
-    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    newReminder.reminderDate = [formatter dateFromString:_reminderDate.text];
     UILocalNotification *note = [[UILocalNotification alloc] init];
     note.alertBody = newReminder.reminderName;
     note.fireDate = newReminder.reminderDate;
     
     [[UIApplication sharedApplication] scheduleLocalNotification:note];
+    [sender resignFirstResponder];
+}
+
+- (void)updateDateField:(id)sender {
+    UIDatePicker *picker = (UIDatePicker *)_reminderDate.inputView;
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateStyle:NSDateFormatterMediumStyle];
+    [formatter setTimeStyle:NSDateFormatterShortStyle];
+    
+    _reminderDate.text = [formatter stringFromDate:picker.date];
 }
 
 /*
