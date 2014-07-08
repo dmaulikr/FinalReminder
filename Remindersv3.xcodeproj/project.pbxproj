@@ -22,6 +22,9 @@
 		6CA7D4D2196C8A7C009DE89B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA7D4B6196C8A7C009DE89B /* CoreData.framework */; };
 		6CA7D4DA196C8A7C009DE89B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6CA7D4D8196C8A7C009DE89B /* InfoPlist.strings */; };
 		6CA7D4DC196C8A7C009DE89B /* Remindersv3Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CA7D4DB196C8A7C009DE89B /* Remindersv3Tests.m */; };
+		6CA7D4E7196C8AA9009DE89B /* ACUReminder.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CA7D4E6196C8AA9009DE89B /* ACUReminder.m */; };
+		6CA7D4EB196C8AD2009DE89B /* ACUViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CA7D4E9196C8AD2009DE89B /* ACUViewController.m */; };
+		6CA7D4EC196C8AD2009DE89B /* ACUViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CA7D4EA196C8AD2009DE89B /* ACUViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,11 @@
 		6CA7D4D7196C8A7C009DE89B /* Remindersv3Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Remindersv3Tests-Info.plist"; sourceTree = "<group>"; };
 		6CA7D4D9196C8A7C009DE89B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6CA7D4DB196C8A7C009DE89B /* Remindersv3Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Remindersv3Tests.m; sourceTree = "<group>"; };
+		6CA7D4E5196C8AA9009DE89B /* ACUReminder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACUReminder.h; sourceTree = "<group>"; };
+		6CA7D4E6196C8AA9009DE89B /* ACUReminder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACUReminder.m; sourceTree = "<group>"; };
+		6CA7D4E8196C8AD2009DE89B /* ACUViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACUViewController.h; sourceTree = "<group>"; };
+		6CA7D4E9196C8AD2009DE89B /* ACUViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACUViewController.m; sourceTree = "<group>"; };
+		6CA7D4EA196C8AD2009DE89B /* ACUViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ACUViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +127,11 @@
 				6CA7D4C2196C8A7C009DE89B /* ACUAppDelegate.m */,
 				6CA7D4C7196C8A7C009DE89B /* Images.xcassets */,
 				6CA7D4C4196C8A7C009DE89B /* Remindersv3.xcdatamodeld */,
+				6CA7D4E5196C8AA9009DE89B /* ACUReminder.h */,
+				6CA7D4E8196C8AD2009DE89B /* ACUViewController.h */,
+				6CA7D4E9196C8AD2009DE89B /* ACUViewController.m */,
+				6CA7D4EA196C8AD2009DE89B /* ACUViewController.xib */,
+				6CA7D4E6196C8AA9009DE89B /* ACUReminder.m */,
 				6CA7D4B9196C8A7C009DE89B /* Supporting Files */,
 			);
 			path = Remindersv3;
@@ -229,6 +242,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CA7D4EC196C8AD2009DE89B /* ACUViewController.xib in Resources */,
 				6CA7D4BD196C8A7C009DE89B /* InfoPlist.strings in Resources */,
 				6CA7D4C8196C8A7C009DE89B /* Images.xcassets in Resources */,
 			);
@@ -252,6 +266,8 @@
 				6CA7D4C6196C8A7C009DE89B /* Remindersv3.xcdatamodeld in Sources */,
 				6CA7D4C3196C8A7C009DE89B /* ACUAppDelegate.m in Sources */,
 				6CA7D4BF196C8A7C009DE89B /* main.m in Sources */,
+				6CA7D4E7196C8AA9009DE89B /* ACUReminder.m in Sources */,
+				6CA7D4EB196C8AD2009DE89B /* ACUViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
