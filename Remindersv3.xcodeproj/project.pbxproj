@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		605F6139196C90E200C24774 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 605F6138196C90E200C24774 /* Storyboard.storyboard */; };
+		605F613C196C913A00C24774 /* ACUNewReminderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 605F613B196C913A00C24774 /* ACUNewReminderViewController.m */; };
 		6CA7D4B1196C8A7C009DE89B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA7D4B0196C8A7C009DE89B /* Foundation.framework */; };
 		6CA7D4B3196C8A7C009DE89B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA7D4B2196C8A7C009DE89B /* CoreGraphics.framework */; };
 		6CA7D4B5196C8A7C009DE89B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA7D4B4196C8A7C009DE89B /* UIKit.framework */; };
@@ -38,6 +40,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		605F6138196C90E200C24774 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		605F613A196C913A00C24774 /* ACUNewReminderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACUNewReminderViewController.h; sourceTree = "<group>"; };
+		605F613B196C913A00C24774 /* ACUNewReminderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACUNewReminderViewController.m; sourceTree = "<group>"; };
 		6CA7D4AD196C8A7C009DE89B /* Remindersv3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Remindersv3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CA7D4B0196C8A7C009DE89B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6CA7D4B2196C8A7C009DE89B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -92,6 +97,9 @@
 		6CA7D4A4196C8A7C009DE89B = {
 			isa = PBXGroup;
 			children = (
+				605F6138196C90E200C24774 /* Storyboard.storyboard */,
+				605F613A196C913A00C24774 /* ACUNewReminderViewController.h */,
+				605F613B196C913A00C24774 /* ACUNewReminderViewController.m */,
 				6CA7D4B8196C8A7C009DE89B /* Remindersv3 */,
 				6CA7D4D5196C8A7C009DE89B /* Remindersv3Tests */,
 				6CA7D4AF196C8A7C009DE89B /* Frameworks */,
@@ -243,6 +251,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6CA7D4EC196C8AD2009DE89B /* ACUViewController.xib in Resources */,
+				605F6139196C90E200C24774 /* Storyboard.storyboard in Resources */,
 				6CA7D4BD196C8A7C009DE89B /* InfoPlist.strings in Resources */,
 				6CA7D4C8196C8A7C009DE89B /* Images.xcassets in Resources */,
 			);
@@ -264,6 +273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6CA7D4C6196C8A7C009DE89B /* Remindersv3.xcdatamodeld in Sources */,
+				605F613C196C913A00C24774 /* ACUNewReminderViewController.m in Sources */,
 				6CA7D4C3196C8A7C009DE89B /* ACUAppDelegate.m in Sources */,
 				6CA7D4BF196C8A7C009DE89B /* main.m in Sources */,
 				6CA7D4E7196C8AA9009DE89B /* ACUReminder.m in Sources */,
@@ -464,6 +474,7 @@
 				6CA7D4E1196C8A7C009DE89B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6CA7D4E2196C8A7C009DE89B /* Build configuration list for PBXNativeTarget "Remindersv3Tests" */ = {
 			isa = XCConfigurationList;
@@ -472,6 +483,7 @@
 				6CA7D4E4196C8A7C009DE89B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
