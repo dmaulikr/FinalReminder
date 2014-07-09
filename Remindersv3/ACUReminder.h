@@ -12,6 +12,9 @@
 
 @interface ACUReminder : NSManagedObject
 
++ (NSEntityDescription *)entityWithContext:(NSManagedObjectContext *)context;
++ (instancetype)insertNewInContext:(NSManagedObjectContext *)context;
+
 @property (nonatomic, retain) NSString *reminderName;
 @property (nonatomic, retain) NSString *reminderDescription;
 @property (nonatomic, retain) NSDate *reminderDate;

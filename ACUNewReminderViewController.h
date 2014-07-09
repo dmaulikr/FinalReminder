@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ACUNewReminderViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UITextField *reminderName;
+@interface ACUNewReminderViewController : UIViewController <UITextViewDelegate, UITextFieldDelegate>
+@property (weak, nonatomic) IBOutlet UITextField *reminderNameField;
 
-@property (weak, nonatomic) IBOutlet UITextView *reminderDescription;
-@property (weak, nonatomic) IBOutlet UITextField *reminderDate;
+@property (weak, nonatomic) IBOutlet UITextView *reminderDescriptionView;
+@property (weak, nonatomic) IBOutlet UITextField *reminderDateField;
 @end

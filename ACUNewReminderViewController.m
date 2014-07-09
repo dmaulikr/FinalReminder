@@ -9,8 +9,12 @@
 #import "ACUNewReminderViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "ACUReminder.h"
+#import "ACUAppDelegate.h"
 
 @interface ACUNewReminderViewController ()
+
+@property (strong, nonatomic)IBOutlet UITapGestureRecognizer *tap;
+@property (weak, nonatomic) UIDatePicker *picker;
 
 @end
 
@@ -18,26 +22,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
     // Add a border to the description text box
-    [_reminderDescription.layer setBorderColor:[[[UIColor grayColor] colorWithAlphaComponent:0.5] CGColor]];
-    [_reminderDescription.layer setBorderWidth:0.5];
+    [self.reminderDescriptionView.layer setBorderColor:[[[UIColor grayColor] colorWithAlphaComponent:0.5] CGColor]];
+    [self.reminderDescriptionView.layer setBorderWidth:0.5];
     
     // Give the border rounded edges
-    _reminderDescription.layer.cornerRadius = 5.0;
-    _reminderDescription.clipsToBounds = YES;
+    self.reminderDescriptionView.layer.cornerRadius = 5.0;
+    self.reminderDescriptionView.clipsToBounds = YES;
     
     UIDatePicker *datePicker = [[UIDatePicker alloc] init];
     
-    _reminderDate.inputView = datePicker;
+    self.reminderDateField.inputView = datePicker;
+    self.picker = datePicker;
     
     [datePicker addTarget:self action:@selector(updateDateField:) forControlEvents:UIControlEventValueChanged];
-    
-    
-    
-    // NSString *strDate = [formatter stringFromDate:datePicker.date]
-    
-
 
 }
 
@@ -46,31 +45,42 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma UI Methods
+
+- (IBAction)hideKeyboard:(id)sender {
+    [self.view endEditing:YES];
+    [self.reminderNameField resignFirstResponder];
+    [self.reminderDescriptionView resignFirstResponder];
+    [self.reminderDateField resignFirstResponder];
+
+}
+
 #pragma New Reminder Methods
 
 - (IBAction)addReminder:(id)sender {
     
-    ACUReminder *newReminder = [[ACUReminder alloc] init];
-    newReminder.reminderName = self.reminderName.text;
-    newReminder.reminderDescription = self.reminderDescription.text;
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    newReminder.reminderDate = [formatter dateFromString:_reminderDate.text];
+    ACUAppDelegate *appDelegate = (ACUAppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = appDelegate.managedObjectContext;
+    ACUReminder *newReminder = [ACUReminder insertNewInContext:context];
+    newReminder.reminderName = self.reminderNameField.text;
+    newReminder.reminderDescription = self.reminderDescriptionView.text;
+    // NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    newReminder.reminderDate = self.picker.date;
     UILocalNotification *note = [[UILocalNotification alloc] init];
     note.alertBody = newReminder.reminderName;
     note.fireDate = newReminder.reminderDate;
-    
     [[UIApplication sharedApplication] scheduleLocalNotification:note];
     [sender resignFirstResponder];
 }
 
 - (void)updateDateField:(id)sender {
-    UIDatePicker *picker = (UIDatePicker *)_reminderDate.inputView;
+    UIDatePicker *picker = (UIDatePicker *)self.picker;
     
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateStyle:NSDateFormatterMediumStyle];
     [formatter setTimeStyle:NSDateFormatterShortStyle];
     
-    _reminderDate.text = [formatter stringFromDate:picker.date];
+    self.reminderDateField.text = [formatter stringFromDate:picker.date];
 }
 
 /*
