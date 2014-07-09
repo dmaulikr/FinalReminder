@@ -10,6 +10,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "ACUReminder.h"
 #import "ACUAppDelegate.h"
+#import "ACUReminderStore.h"
 
 @interface ACUNewReminderViewController ()
 
@@ -58,13 +59,9 @@
 #pragma New Reminder Methods
 
 - (IBAction)addReminder:(id)sender {
-    
-    ACUAppDelegate *appDelegate = (ACUAppDelegate *)[[UIApplication sharedApplication] delegate];
-    NSManagedObjectContext *context = appDelegate.managedObjectContext;
-    ACUReminder *newReminder = [ACUReminder insertNewInContext:context];
+    ACUReminder *newReminder = [[ACUReminderStore sharedStore] addReminder];
     newReminder.reminderName = self.reminderNameField.text;
     newReminder.reminderDescription = self.reminderDescriptionView.text;
-    // NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     newReminder.reminderDate = self.picker.date;
     UILocalNotification *note = [[UILocalNotification alloc] init];
     note.alertBody = newReminder.reminderName;
@@ -73,7 +70,7 @@
     [sender resignFirstResponder];
 }
 
-- (void)updateDateField:(id)sender {
+- (void)updateDateField:(id)sender {    
     UIDatePicker *picker = (UIDatePicker *)self.picker;
     
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
