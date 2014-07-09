@@ -9,8 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @interface ACUViewController : UIViewController
+
 @property (weak, nonatomic) IBOutlet UITextField *reminderName;
 @property (weak, nonatomic) IBOutlet UITextField *reminderDescription;
 @property (weak, nonatomic) IBOutlet UIDatePicker *reminderDate;
+@property (weak, nonatomic) IBOutlet UITextField *nameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *descriptionTextField;
+@property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
 
 @end
