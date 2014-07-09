@@ -15,12 +15,14 @@
 @dynamic reminderDescription;
 @dynamic reminderDate;
 
-+ (NSEntityDescription *)entityWithContext:(NSManagedObjectContext *)context {
++ (NSEntityDescription *)entityWithContext:(NSManagedObjectContext *)context
+{
     return [NSEntityDescription entityForName:@"ACUReminder"
-                       inManagedObjectContext:context];
+                inManagedObjectContext:context];
 }
 
-+ (instancetype)insertNewInContext:(NSManagedObjectContext *)context {
++ (instancetype)insertNewInContext:(NSManagedObjectContext *)context
+{
     return [[ACUReminder alloc] initWithEntity:[self entityWithContext:context]
                 insertIntoManagedObjectContext:context];
 }

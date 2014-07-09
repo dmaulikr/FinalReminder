@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6015A577196DAFB800027EC3 /* ACUReminderStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 6015A576196DAFB800027EC3 /* ACUReminderStore.m */; };
 		605F6139196C90E200C24774 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 605F6138196C90E200C24774 /* Storyboard.storyboard */; };
 		605F613C196C913A00C24774 /* ACUNewReminderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 605F613B196C913A00C24774 /* ACUNewReminderViewController.m */; };
 		6CA7D4B1196C8A7C009DE89B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA7D4B0196C8A7C009DE89B /* Foundation.framework */; };
@@ -26,6 +25,7 @@
 		6CA7D4DA196C8A7C009DE89B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6CA7D4D8196C8A7C009DE89B /* InfoPlist.strings */; };
 		6CA7D4DC196C8A7C009DE89B /* Remindersv3Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CA7D4DB196C8A7C009DE89B /* Remindersv3Tests.m */; };
 		6CA7D4E7196C8AA9009DE89B /* ACUReminder.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CA7D4E6196C8AA9009DE89B /* ACUReminder.m */; };
+		6CE01324196DA3E200852C93 /* ACUReminderStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE01323196DA3E200852C93 /* ACUReminderStore.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +64,11 @@
 		6CA7D4DB196C8A7C009DE89B /* Remindersv3Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Remindersv3Tests.m; sourceTree = "<group>"; };
 		6CA7D4E5196C8AA9009DE89B /* ACUReminder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACUReminder.h; sourceTree = "<group>"; };
 		6CA7D4E6196C8AA9009DE89B /* ACUReminder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACUReminder.m; sourceTree = "<group>"; };
+		6CA7D4E8196C8AD2009DE89B /* ACUViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACUViewController.h; sourceTree = "<group>"; };
+		6CA7D4E9196C8AD2009DE89B /* ACUViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACUViewController.m; sourceTree = "<group>"; };
+		6CA7D4EA196C8AD2009DE89B /* ACUViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ACUViewController.xib; sourceTree = "<group>"; };
+		6CE01322196DA3E200852C93 /* ACUReminderStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACUReminderStore.h; sourceTree = "<group>"; };
+		6CE01323196DA3E200852C93 /* ACUReminderStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACUReminderStore.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +104,8 @@
 				6015A575196DAFB800027EC3 /* ACUReminderStore.h */,
 				6015A576196DAFB800027EC3 /* ACUReminderStore.m */,
 				605F613A196C913A00C24774 /* ACUNewReminderViewController.h */,
+				6CE01322196DA3E200852C93 /* ACUReminderStore.h */,
+				6CE01323196DA3E200852C93 /* ACUReminderStore.m */,
 				605F613B196C913A00C24774 /* ACUNewReminderViewController.m */,
 				6CA7D4B8196C8A7C009DE89B /* Remindersv3 */,
 				6CA7D4D5196C8A7C009DE89B /* Remindersv3Tests */,
@@ -135,6 +142,9 @@
 				6CA7D4C2196C8A7C009DE89B /* ACUAppDelegate.m */,
 				6CA7D4C7196C8A7C009DE89B /* Images.xcassets */,
 				6CA7D4C4196C8A7C009DE89B /* Remindersv3.xcdatamodeld */,
+				6CA7D4E8196C8AD2009DE89B /* ACUViewController.h */,
+				6CA7D4E9196C8AD2009DE89B /* ACUViewController.m */,
+				6CA7D4EA196C8AD2009DE89B /* ACUViewController.xib */,
 				6CA7D4E5196C8AA9009DE89B /* ACUReminder.h */,
 				6CA7D4E6196C8AA9009DE89B /* ACUReminder.m */,
 				6CA7D4B9196C8A7C009DE89B /* Supporting Files */,
@@ -269,11 +279,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				6CA7D4C6196C8A7C009DE89B /* Remindersv3.xcdatamodeld in Sources */,
+				6CE01324196DA3E200852C93 /* ACUReminderStore.m in Sources */,
 				605F613C196C913A00C24774 /* ACUNewReminderViewController.m in Sources */,
 				6CA7D4C3196C8A7C009DE89B /* ACUAppDelegate.m in Sources */,
 				6CA7D4BF196C8A7C009DE89B /* main.m in Sources */,
 				6CA7D4E7196C8AA9009DE89B /* ACUReminder.m in Sources */,
-				6015A577196DAFB800027EC3 /* ACUReminderStore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

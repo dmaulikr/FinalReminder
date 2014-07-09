@@ -38,6 +38,11 @@
     self.picker = datePicker;
     
     [datePicker addTarget:self action:@selector(updateDateField:) forControlEvents:UIControlEventValueChanged];
+    
+    NSLog(@"%@",[[ACUReminderStore sharedStore] allReminders]);
+    
+    // NSString *strDate = [formatter stringFromDate:datePicker.date]
+    
 
 }
 
@@ -67,7 +72,7 @@
     note.alertBody = newReminder.reminderName;
     note.fireDate = newReminder.reminderDate;
     [[UIApplication sharedApplication] scheduleLocalNotification:note];
-    [sender resignFirstResponder];
+    [self resignFirstResponder];
 }
 
 - (void)updateDateField:(id)sender {    

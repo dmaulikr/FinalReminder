@@ -47,8 +47,15 @@
         _model = [NSManagedObjectModel mergedModelFromBundles:nil];
         NSPersistentStoreCoordinator *psc = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:_model];
         
+        NSError *error;
+        
         NSString *path = self.itemArchivePath;
         NSURL *storeURL = [NSURL fileURLWithPath:path];
+        
+        if (![psc addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error])
+        {
+            [NSException raise:@"Open Failure" format:[error localizedDescription]];
+        }
         
         _context = [[NSManagedObjectContext alloc] init];
         _context.persistentStoreCoordinator = psc;
@@ -77,6 +84,7 @@
 {
     [self.context deleteObject:reminder];
     [self.privateReminders removeObjectIdenticalTo:reminder];
+    [self loadAllReminders];
 }
 
 - (NSString *)itemArchivePath
@@ -119,5 +127,7 @@
         self.privateReminders = [[NSMutableArray alloc] initWithArray:result];        
     }
 }
+
+
 
 @end

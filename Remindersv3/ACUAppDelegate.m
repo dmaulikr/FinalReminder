@@ -7,6 +7,7 @@
 //
 
 #import "ACUAppDelegate.h"
+#import "ACUReminderStore.h"
 
 @implementation ACUAppDelegate
 
@@ -16,14 +17,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-//    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-//    // Override point for customization after application launch.
-//    
-//    ACUViewController *detailController = [[ACUViewController alloc] init];
-//    self.window.rootViewController = detailController;
-//    
-//    self.window.backgroundColor = [UIColor whiteColor];
-//    [self.window makeKeyAndVisible];
     return YES;
 }
 

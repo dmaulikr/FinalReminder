@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>22BA2C3F-704D-48C7-A212-A41C7BFF82F2</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Remindersv3</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>EC86FBCC-E17E-40E0-9942-A56B738DE4B6</key>
+		<string>https://github.com/girkaruma/FinalReminder.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Remindersv3.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>EC86FBCC-E17E-40E0-9942-A56B738DE4B6</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/girkaruma/FinalReminder.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>EC86FBCC-E17E-40E0-9942-A56B738DE4B6</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>EC86FBCC-E17E-40E0-9942-A56B738DE4B6</string>
+			<key>IDESourceControlWCCName</key>
+			<string>FinalReminder</string>
+		</dict>
+	</array>
+</dict>
+</plist>

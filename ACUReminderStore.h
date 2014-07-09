@@ -17,6 +17,8 @@
 + (instancetype) sharedStore;
 - (ACUReminder *)addReminder;
 - (void)removeReminder:(ACUReminder *)reminder;
+//- (void)moveItemAtIndex:(NSUInteger)fromIndex
+//                toIndex:(NSUInteger)toIndex;
 - (BOOL)saveChanges;
 
 @end
