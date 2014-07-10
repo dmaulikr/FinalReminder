@@ -15,11 +15,12 @@
 @interface ACUNewReminderViewController ()
 
 @property (strong, nonatomic)IBOutlet UITapGestureRecognizer *tap;
-@property (weak, nonatomic) UIDatePicker *picker;
 
 @end
 
 @implementation ACUNewReminderViewController
+
+#pragma View Methods
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -37,13 +38,24 @@
     self.reminderDateField.inputView = datePicker;
     self.picker = datePicker;
     
+    NSLog(@"%@", [[ACUReminderStore sharedStore] allReminders]);
+    
     [datePicker addTarget:self action:@selector(updateDateField:) forControlEvents:UIControlEventValueChanged];
-    
-    NSLog(@"%@",[[ACUReminderStore sharedStore] allReminders]);
-    
-    // NSString *strDate = [formatter stringFromDate:datePicker.date]
-    
 
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    ACUReminder *reminder = self.reminder;
+    
+    self.reminderNameField.text = reminder.reminderName;
+    self.reminderDescriptionView.text = reminder.reminderDescription;
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateStyle:NSDateFormatterMediumStyle];
+    [formatter setTimeStyle:NSDateFormatterShortStyle];
+    self.reminderDateField.text = [formatter stringFromDate:reminder.reminderDate];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -61,19 +73,20 @@
 
 }
 
-#pragma New Reminder Methods
-
 - (IBAction)addReminder:(id)sender {
-    ACUReminder *newReminder = [[ACUReminderStore sharedStore] addReminder];
-    newReminder.reminderName = self.reminderNameField.text;
-    newReminder.reminderDescription = self.reminderDescriptionView.text;
-    newReminder.reminderDate = self.picker.date;
+    
+    self.reminder = [[ACUReminderStore sharedStore] addReminder];
+    self.reminder.reminderName = self.reminderNameField.text;
+    self.reminder.reminderDescription = self.reminderDescriptionView.text;
+    self.reminder.reminderDate = self.picker.date;
     UILocalNotification *note = [[UILocalNotification alloc] init];
-    note.alertBody = newReminder.reminderName;
-    note.fireDate = newReminder.reminderDate;
+    note.alertBody = self.reminder.reminderName;
+    note.fireDate = self.reminder.reminderDate;
     [[UIApplication sharedApplication] scheduleLocalNotification:note];
+    [[ACUReminderStore sharedStore] saveChanges];
     [self resignFirstResponder];
 }
+
 
 - (void)updateDateField:(id)sender {    
     UIDatePicker *picker = (UIDatePicker *)self.picker;

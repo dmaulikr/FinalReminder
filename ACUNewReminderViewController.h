@@ -8,9 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@class ACUReminder;
+
 @interface ACUNewReminderViewController : UIViewController <UITextViewDelegate, UITextFieldDelegate>
+
+@property (nonatomic, strong) ACUReminder *reminder;
+
 @property (weak, nonatomic) IBOutlet UITextField *reminderNameField;
 
 @property (weak, nonatomic) IBOutlet UITextView *reminderDescriptionView;
 @property (weak, nonatomic) IBOutlet UITextField *reminderDateField;
+@property (weak, nonatomic) UIDatePicker *picker;
 @end
